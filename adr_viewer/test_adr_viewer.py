@@ -24,6 +24,10 @@ def test_should_mark_superseded_records():
 
     assert config['status'] == 'superseded'
 
+def test_should_mark_old_superceded_records():
+    config = parse_adr_to_config('doc/adr/0007-this-one-will-be-superseded-old-style.md')
+
+    assert config['status'] == 'superseded'
 
 def test_should_mark_amended_records():
     config = parse_adr_to_config('doc/adr/0004-distinguish-superseded-records-with-colour.md')
